@@ -11,4 +11,4 @@
   
 - name: Install MongoDB
   sudo: yes
-  yum: mongodb-org state=installed
+  yum: name=mongodb-org state=installed
