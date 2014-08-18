@@ -1,0 +1,12 @@
+# commands
+ansible all -a "/bin/echo hello" -u holee --ask-pass
+ssh-copy-id -i .ssh/id_rsa.pub holee@phel00208622f91
+ansible-playbook -i hosts replica_set.yml
+
+
+# hosts
+10.208.17.87  phel002e126e2a4 ansiblehost
+10.208.18.53  phel002b1eb1f1a rs0-0
+10.208.18.65  phel00208622f91 rs0-1
+10.208.19.164 phel0025f893d36 rs0-2
+
