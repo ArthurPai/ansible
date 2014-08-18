@@ -1,0 +1,9 @@
+---
+# This Playbook deploy a MongoDB replica set
+
+- name: Install MongoDB on all MongoDB servers
+  hosts: all
+  roles:
+    - role: common
+    
+- name: Configure replica set

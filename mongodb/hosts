@@ -1,0 +1,13 @@
+# List of MongoDB servers
+
+# List of servers where replication will occur
+[replication_servers]
+phel002b1eb1f1a
+phel00208622f91
+phel0025f893d36
+
+# List of mongos (a.k.a. routers) servers, required for sharded cluster
+[mongos_servers]
+
+# List of config servers, required sharded cluster
+[config_servers]

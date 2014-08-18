@@ -1,0 +1,13 @@
+# Global variables for MongoDB installation
+
+# Port for mongod
+mongod_port: 27017
+
+# Port for mongos
+mongos_port: 27017
+
+# Port for config server
+config_server_port: 27019
+
+# Directory prefix where database files would be stored
+mongodb_datadir_prefix: /data/
