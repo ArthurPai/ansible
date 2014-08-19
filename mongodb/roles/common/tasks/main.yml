@@ -15,5 +15,5 @@
 
 - name: Set configuration file
   sudo: yes
-  copy: src=mongod.conf.j2 dest=/etc/mongod.conf force=yes
+  template: src=mongod.conf.j2 dest=/etc/mongod.conf
   
