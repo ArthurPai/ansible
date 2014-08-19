@@ -1,0 +1,14 @@
+systemLog:
+  destination: file
+  path: "/var/log/mongodb/mongodb.log"
+  quiet: true
+  logAppend: true
+processManagement:
+  fork: true
+net:
+  port: {{ mongodb_port }}
+operationProfiling:
+  mode: slowOp
+storage:
+  dbPath: {{ mongodb_datadir_prefix }}mongodb
+  smallFiles: true
