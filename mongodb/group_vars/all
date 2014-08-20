@@ -16,7 +16,7 @@ mongodb_datadir_prefix: /data/
 mongodb_logdir_prefix: /var/log/
 
 # Whether use smallFiles option to run MongoDB
-smallfiles_option: true
+smallfiles_option: "true"
 
 # Name for replica set
 replset_name: rs
