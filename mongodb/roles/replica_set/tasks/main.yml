@@ -7,6 +7,10 @@
   sudo: yes
   file: path={{ mongodb_datadir_prefix }}mongodb state=directory owner=mongod group=mongod
 
+- name: Create log file directory
+  sudo: yes
+  file: path={{ mongodb_logdir_prefix }}mongodb state=directory owner=mongod group=mongod
+  
 - name: Start MongoDB
   sudo: yes
   service: name=mongod state=started
