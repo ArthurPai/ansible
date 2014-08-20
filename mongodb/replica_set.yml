@@ -7,5 +7,5 @@
     - role: replica_set
     
 - hosts: primary_servers
-  task:
+  tasks:
     - include: roles/replica_set/tasks/replset_init.yml
