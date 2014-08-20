@@ -1,6 +1,6 @@
 systemLog:
   destination: file
-  path: "/var/log/mongodb/mongod.log"
+  path: "{{ mongodb_logdir_prefix }}mongodb/mongod.log"
   quiet: true
   logAppend: true
 processManagement:
@@ -11,6 +11,6 @@ operationProfiling:
   mode: slowOp
 storage:
   dbPath: {{ mongodb_datadir_prefix }}mongodb
-  smallFiles: true
+  smallFiles: {{ smallfiles_option }}
 replication:
   replSetName: "{{ replset_name }}0"
