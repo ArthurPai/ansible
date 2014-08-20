@@ -9,4 +9,5 @@
 
 - name: Start MongoDB
   sudo: yes
-  command: mongod -f /etc/mongod.conf
+  service: name=mongod state=restarted
+  #command: mongod -f /etc/mongod.conf

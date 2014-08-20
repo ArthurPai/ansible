@@ -1,6 +1,6 @@
 ---
 - name: Create replica set initialization file
-  template: replset_init.j2 dest=/tmp/replset_init.js
+  template: src=replset_init.j2 dest=/tmp/replset_init.js
   
 - name: Wait for MongoDB to fully start
   pause: seconds=20
