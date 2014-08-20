@@ -10,3 +10,6 @@ ansible-playbook -i hosts replica_set.yml
 10.208.18.65  phel00208622f91 rs0-1
 10.208.19.164 phel0025f893d36 rs0-2
 
+phel00275c8d736 rs2-0
+phel0022fc9a874 rs2-1
+phel0024a93c308 rs2-2
