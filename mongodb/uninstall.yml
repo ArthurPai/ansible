@@ -11,14 +11,18 @@
       sudo: yes
       yum: name=mongodb-org state=absent
       
-    - name: Remove config files
+    - name: Remove file: mongodb.repo
+      sudo: yes
+      command: rm /etc/yum.repos.d/mongodb.repo
+      
+    - name: Remove file: mongod.conf
       sudo: yes
       command: rm /etc/mongod.conf
       
-    - name: Remove log files
+    - name: Remove config files under {{ mongodb_logdir_prefix }}mongodb
       sudo: yes
       command: rm -rf {{ mongodb_logdir_prefix }}mongodb
       
-    - name: Remove data files
+    - name: Remove data files under {{ mongodb_datadir_prefix }}mongodb
       sudo: yes
       command: rm -rf {{ mongodb_datadir_prefix }}mongodb
