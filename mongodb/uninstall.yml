@@ -19,10 +19,10 @@
       sudo: yes
       command: rm /etc/mongod.conf
       
-    - name: Remove config files under {{ mongodb_logdir_prefix }}mongodb
+    - name: Remove config files
       sudo: yes
       command: rm -rf {{ mongodb_logdir_prefix }}mongodb
       
-    - name: Remove data files under {{ mongodb_datadir_prefix }}mongodb
+    - name: Remove data files
       sudo: yes
       command: rm -rf {{ mongodb_datadir_prefix }}mongodb
