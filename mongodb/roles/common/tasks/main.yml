@@ -12,8 +12,3 @@
 - name: Install MongoDB
   sudo: yes
   yum: name=mongodb-org state=installed
-
-- name: Set configuration file
-  sudo: yes
-  template: src=mongod.conf.j2 dest=/etc/mongod.conf
-  

@@ -11,3 +11,6 @@ config_server_port: 27019
 
 # Directory prefix where database files would be stored
 mongodb_datadir_prefix: /data/
+
+# Name for replica set
+replset_name: rs

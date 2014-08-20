@@ -4,3 +4,8 @@
 - hosts: all
   roles:
     - role: common
+    - role: replica_set
+    
+- hosts: primary_servers
+  task:
+    - include: roles/replica_set/tasks/replset_init.yml

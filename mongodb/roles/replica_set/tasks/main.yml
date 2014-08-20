@@ -1,0 +1,10 @@
+---
+- name: Set configuration file
+  sudo: yes
+  template: src=mongod.conf.j2 dest=/etc/mongod.conf
+  
+- name: Create database directory
+  file: path={{ mongodb_datadir_prefix }}mongodb state=directory owner=mongod group=mongod
+
+- name: Start MongoDB
+  command: mongod -f /etc/mongod.conf
