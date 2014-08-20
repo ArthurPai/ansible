@@ -4,4 +4,4 @@ sleep(13000)
 rs.add("{{ host }}:{{ mongod_port }}")
 sleep(8000)
 {% endfor %}
-printjson(rs.status())
+rs.status()

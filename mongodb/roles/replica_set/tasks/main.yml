@@ -8,6 +8,5 @@
   file: path={{ mongodb_datadir_prefix }}mongodb state=directory owner=mongod group=mongod
 
 - name: Start MongoDB
-  #sudo: yes
+  sudo: yes
   service: name=mongod state=started
-  #command: mongod -f /etc/mongod.conf
