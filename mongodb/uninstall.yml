@@ -11,11 +11,11 @@
       sudo: yes
       yum: name=mongodb-org state=absent
       
-    - name: Remove file: mongodb.repo
+    - name: Remove file (mongodb.repo)
       sudo: yes
       command: rm /etc/yum.repos.d/mongodb.repo
       
-    - name: Remove file: mongod.conf
+    - name: Remove file (mongod.conf)
       sudo: yes
       command: rm /etc/mongod.conf
       
