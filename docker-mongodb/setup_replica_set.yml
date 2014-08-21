@@ -1,0 +1,11 @@
+---
+# This Playbook deploy a MongoDB replica set
+
+- hosts: replication_servers
+  roles:
+    - role: common
+    - role: replica_set
+    
+- hosts: primary_servers
+  tasks:
+    - include: roles/replica_set/tasks/replset_init.yml

@@ -1,0 +1,8 @@
+---
+# This Playbook uninstall MongoDB and remove all related files (include data!)
+
+- hosts: all
+  tasks:
+    - name: Reset MongoDB Docker image
+    
+    - name: Remove data files

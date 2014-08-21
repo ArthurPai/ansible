@@ -1,0 +1,14 @@
+---
+# This Playbook runs all the common plays in the deployment
+
+- name: Create hosts file for all machines
+  sudo: yes
+  template: src=hosts.j2 dest=/etc/hosts
+  
+- name: Create repository for MongoDB
+  sudo: yes
+  copy: src=mongodb.repo.j2 dest=/etc/yum.repos.d/mongodb.repo
+  
+- name: Install MongoDB
+  sudo: yes
+  yum: name=mongodb-org state=installed

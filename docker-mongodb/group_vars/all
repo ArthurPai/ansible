@@ -1,0 +1,22 @@
+# Global variables for MongoDB installation
+
+# Port for mongod
+mongod_port: 27017
+
+# Port for mongos
+mongos_port: 27017
+
+# Port for config server
+config_server_port: 27019
+
+# Directory prefix where database files are kept
+mongodb_datadir_prefix: /data/
+
+# Directory prefix where log files are kept
+mongodb_logdir_prefix: /var/log/
+
+# Whether use smallFiles option to run MongoDB
+smallfiles_option: "true"
+
+# Name for replica set
+replset_name: rs
