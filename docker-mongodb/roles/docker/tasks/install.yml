@@ -8,4 +8,6 @@
 - name: Start Docker service
   sudo: yes
   service: name=docker state=started
+  
+- name: Pause 1 second to allow Docker service starts
   pause: seconds=1
