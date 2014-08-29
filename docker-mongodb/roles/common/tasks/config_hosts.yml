@@ -6,6 +6,7 @@
   template: src=hosts.j2 dest=/tmp/hosts.js
   
 - name: Append hostnames to /etc/hosts
+  sudo: yes
   shell: cat /tmp/hosts.js >> /etc/hosts
   args:
     removes: /tmp/hosts.js

@@ -1,7 +1,7 @@
 # Ansible
 ansible all -a "/bin/echo hello" -u holee --ask-pass
 ssh-copy-id -i .ssh/id_rsa.pub holee@phel00208622f91
-ansible-playbook -i hosts replica_set.yml
+ansible-playbook -i hosts replica_set.yml --ask-sudo-pass
 
 # Docker
 sudo docker run -d -v /data/db:/data/db --name rs0-0 dockerfile/mongodb mongod --smallfiles --replSet rs0 --nojournal
