@@ -7,7 +7,7 @@
 
 - name: Create MongoDB data directory
   sudo: yes
-  file: path={{ mongodb_datadir_prefix }}mongodb state=directory owner=mongod group=mongod mode=1644
+  file: path={{ mongodb_datadir_prefix }}mongodb state=directory mode=1766
   
 - name: Start MongoDB with configured mongod.conf
   sudo: yes
