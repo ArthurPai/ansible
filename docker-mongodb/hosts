@@ -7,12 +7,10 @@ secondary_servers
 
 # Primary node(s) of replica set(s)
 [primary_servers]
-phel002c55bfaf8
 
 # Secondary node(s) of replica set(s)
 [secondary_servers]
-phel0028368623d
-phel0021573379f
+phel002877577bb
 
 # List of mongos (a.k.a. routers) servers, required for sharded cluster
 [mongos_servers]
