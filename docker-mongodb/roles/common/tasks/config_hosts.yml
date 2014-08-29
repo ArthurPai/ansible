@@ -1,0 +1,11 @@
+---
+# This Playbook configure /etc/hosts file
+
+- name: Gather hostnames from nodes
+  sudo: yes
+  template: src=hosts.j2 dest=/tmp/hosts.js
+  
+- name: Append hostnames to /etc/hosts
+  shell: cat /tmp/hosts.js >> /etc/hosts
+  args:
+    removes: /tmp/hosts.js

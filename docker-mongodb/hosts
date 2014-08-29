@@ -1,18 +1,18 @@
 # List of MongoDB servers
 
 # List of servers where replication will occur
-[replication_servers:children]
+[mongod_servers:children]
 primary_servers
 secondary_servers
 
 # Primary node(s) of replica set(s)
 [primary_servers]
-phel00275c8d736
+phel002c55bfaf8
 
 # Secondary node(s) of replica set(s)
 [secondary_servers]
-phel0022fc9a874
-phel0024a93c308
+phel0028368623d
+phel0021573379f
 
 # List of mongos (a.k.a. routers) servers, required for sharded cluster
 [mongos_servers]

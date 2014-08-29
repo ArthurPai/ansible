@@ -1,15 +1,37 @@
-# commands
+# Ansible
 ansible all -a "/bin/echo hello" -u holee --ask-pass
 ssh-copy-id -i .ssh/id_rsa.pub holee@phel00208622f91
 ansible-playbook -i hosts replica_set.yml
 
+# Docker
+sudo docker run -d -v /data/db:/data/db --name rs0-0 dockerfile/mongodb mongod --smallfiles --replSet rs0 --nojournal
+sudo docker run -i -t --rm --link rs0-0:mongodb dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_27017_TCP_ADDR'
 
 # hosts
 10.208.17.87  phel002e126e2a4 ansiblehost
-10.208.18.53  phel002b1eb1f1a rs0-0
-10.208.18.65  phel00208622f91 rs0-1
-10.208.19.164 phel0025f893d36 rs0-2
 
-phel00275c8d736 rs2-0
-phel0022fc9a874 rs2-1
-phel0024a93c308 rs2-2
+10.208.16.184 phel0020af277d1 rstest-1
+10.208.18.92  phel00209e13eff rstest-2
+
+10.208.18.162 phel002c55bfaf8 rs1-0
+10.208.18.77  phel0028368623d rs1-1
+10.208.18.94  phel0021573379f rs1-2
+
+10.208.16.16  phel00275c8d736 rs2-0
+10.208.16.219 phel0022fc9a874 rs2-1
+10.208.18.52  phel0024a93c308 rs2-2
+
+# mongo shell rsconf()
+rsconf = {
+           _id: "rs0",
+           members: [
+                      {
+                       _id: 0,
+                       host: "688534c811d4:27017"
+                      },
+                      {
+                       _id: 1,
+                       host: "phel0026f40180f:27017"
+                      }
+                    ]
+         }

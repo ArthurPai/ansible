@@ -1,7 +1,0 @@
----
-# This Playbook install Docker and uses pre-built MongoDB container image
-
-- hosts: all
-  tasks:
-    - name: Install Docker
-    

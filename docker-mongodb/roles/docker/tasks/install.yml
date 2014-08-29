@@ -1,0 +1,10 @@
+---
+# This Playbook installs and starts Docker process
+
+- name: Install Docker
+  sudo: yes
+  yum: name=docker-io state=installed
+  
+- name: Start Docker service
+  sudo: yes
+  service: name=docker state:started

@@ -1,0 +1,13 @@
+---
+# This Playbook initialize MongoDB cluster with MongoDB running in Docker container
+
+- name: Copy init script to tmp folder
+  sudo: yes
+  template: src=replset_init.j2 dest=/tmp/replset_init.js
+  
+- name: Start Mongo shell within container
+  sudo: yes
+  command: docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_{{ mongod_port }}_TCP_ADDR /tmp/replset_init.js'
+
+- name: Initialize MongoDB cluster
+  shell: 

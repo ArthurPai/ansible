@@ -1,0 +1,10 @@
+---
+# This Playbook configure MongoDB within a new container
+
+- name: Configure mongod.conf file
+  sudo: yes
+  template: src=mongod.conf.j2 dest=/tmp/mongod.conf.tmp
+
+- name: Start MongoDB with configured mongod.conf
+  sudo: yes
+  command: docker run --name mongodb -d -v /tmp:/tmp -v {{ mongodb_datadir_prefix }}mongodb:{{ mongodb_datadir_prefix }}mongodb -p {{ mongod_port }}:{{ mongod_port }} {{ docker_mongodb_image }} sh -c "/bin/cp -rf /tmp/mongod.conf.tmp /etc/mongod.conf && mongod -f /etc/mongod.conf"

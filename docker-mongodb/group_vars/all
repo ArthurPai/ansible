@@ -1,5 +1,8 @@
-# Global variables for MongoDB installation
+############## Global Docker variables ###########
+# Docker image for MongoDB
+docker_mongodb_image: dockerfile/mongodb
 
+############## Global MongoDB variables ##########
 # Port for mongod
 mongod_port: 27017
 
@@ -12,11 +15,20 @@ config_server_port: 27019
 # Directory prefix where database files are kept
 mongodb_datadir_prefix: /data/
 
+# Directory prefix where journal files are kept
+mongodb_journaldir_prefix: /journal/
+
 # Directory prefix where log files are kept
 mongodb_logdir_prefix: /var/log/
 
-# Whether use smallFiles option to run MongoDB
+# Whether to use smallFiles option to run MongoDB
 smallfiles_option: "true"
+
+# Whether to enable journal (must enable for production)
+journal_option: "true"
+
+# Operation profiling mode: off, slowOp, or all
+operation_profiling_mode: "off"
 
 # Name for replica set
 replset_name: rs

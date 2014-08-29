@@ -1,0 +1,6 @@
+---
+# This Playbook pulls MongoDB image from public Docker repository
+
+- name: Pull MongoDB image from public Docker repository
+  sudo: yes
+  command: sudo docker pull {{ docker_mongodb_image }}

@@ -1,0 +1,12 @@
+---
+# This Playbook will install Docker and MongoDB, and configure a MongoDB replica set.
+
+- hosts: mongod_servers
+  roles:
+    - role: common
+    - role: docker
+    - role: mongodb
+
+- hosts: primary_servers
+  tasks:
+    - include: roles/setup_mongodb/tasks/init_replset.yml

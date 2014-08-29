@@ -1,0 +1,6 @@
+---
+# This Playbook pulls MongoDB image, and configures MongoDB within Docker container
+
+- include: pull_mongodb.yml
+
+- include: config_mongodb.yml
