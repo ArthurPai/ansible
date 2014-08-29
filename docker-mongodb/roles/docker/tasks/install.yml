@@ -7,4 +7,4 @@
   
 - name: Start Docker service
   sudo: yes
-  service: name=docker state:started
+  service: name=docker state=started
