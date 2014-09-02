@@ -3,8 +3,8 @@
 
 - name: Copy init script to tmp folder
   sudo: yes
-  template: src=replset_init.j2 dest=/tmp/replset_init.js
+  template: src=init_replset.j2 dest=/tmp/init_replset.js
   
 - name: Start mongo shell and initialize MongoDB replica set
   sudo: yes
-  command: docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_{{ mongod_port }}_TCP_ADDR /tmp/replset_init.js'
+  command: docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_{{ mongod_port }}_TCP_ADDR /tmp/init_replset.js'
