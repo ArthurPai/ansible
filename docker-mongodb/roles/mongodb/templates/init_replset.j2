@@ -6,6 +6,8 @@ sleep(3000)
 {% endfor %}
 rs.status()
 cfg = rs.conf()
-cfg.members[0].host = "{{ primary_servers }}:{{ mongod_port }}"
+{% for host in groups['primary_servers'] %}
+cfg.members[0].host = "{{ host }}:{{ mongod_port }}"
+{% endfor %}
 rs.reconfig(cfg)
 rs.status()
