@@ -12,6 +12,6 @@ sleep(3000)
 
 # Rename to proper primary server name
 cfg = rs.conf()
-cfg.members[0].host = "groups['primary_servers']:27017"
+cfg.members[0].host = "phel002c55bfaf8:27017"
 rs.reconfig(cfg)
 rs.status()
