@@ -10,9 +10,6 @@ sudo docker run -i -t --rm --link rs0-0:mongodb dockerfile/mongodb bash -c 'mong
 # hosts
 10.208.17.87  phel002e126e2a4 ansiblehost
 
-10.208.16.184 phel0020af277d1 rstest-1
-10.208.18.92  phel00209e13eff rstest-2
-
 10.208.18.162 phel002c55bfaf8 rs1-0
 10.208.18.77  phel0028368623d rs1-1
 10.208.18.94  phel0021573379f rs1-2
