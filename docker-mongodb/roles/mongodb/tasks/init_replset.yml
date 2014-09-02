@@ -6,7 +6,7 @@
   template: src=init_replset.j2 dest=/tmp/init_replset.js
   
 - name: Pause to allow MongoDB service starts
-  pause: seconds=3  
+  pause: seconds=6  
   
 - name: Start mongo shell and initialize MongoDB replica set
   sudo: yes
