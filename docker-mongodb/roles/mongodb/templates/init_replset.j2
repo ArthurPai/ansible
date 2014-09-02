@@ -5,13 +5,3 @@ rs.add("{{ host }}:{{ mongod_port }}")
 sleep(3000)
 {% endfor %}
 rs.status()
-<<<<<<< HEAD
-sleep(3000)
-
-# Rename to proper primary server name
-cfg = rs.conf()
-cfg.members[0].host = "phel002c55bfaf8:27017"
-rs.reconfig(cfg)
-rs.status()
-=======
->>>>>>> origin/master
