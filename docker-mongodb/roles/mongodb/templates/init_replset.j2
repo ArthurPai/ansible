@@ -1,7 +1,17 @@
+# Initiate replica set
 rs.initiate()
 sleep(3000)
+
+# Add secondary servers
 {% for host in groups['secondary_servers'] %}
 rs.add("{{ host }}:{{ mongod_port }}")
 sleep(3000)
 {% endfor %}
+rs.status()
+sleep(3000)
+
+# Rename to proper primary server name
+cfg = rs.conf()
+cfg.members[0].host = "groups['primary_servers']:27017"
+rs.reconfig(cfg)
 rs.status()
