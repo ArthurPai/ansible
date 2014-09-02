@@ -10,4 +10,4 @@
   service: name=docker state=started
   
 - name: Pause to allow Docker service starts
-  pause: seconds=3
+  pause: seconds=6
