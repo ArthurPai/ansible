@@ -5,6 +5,7 @@ ansible-playbook -i hosts replica_set.yml --ask-sudo-pass
 
 # Docker
 sudo docker run -d -v /data/db:/data/db --name rs0-0 dockerfile/mongodb mongod --smallfiles --replSet rs0 --nojournal
+sudo docker run -i -t --rm --link mongodb:mongodb dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_27017_TCP_ADDR'
 sudo docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_27017_TCP_ADDR /tmp/init_replset.js'
 
 # hosts
