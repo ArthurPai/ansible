@@ -5,3 +5,7 @@ rs.add("{{ host }}:{{ mongod_port }}")
 sleep(3000)
 {% endfor %}
 rs.status()
+cfg = rs.conf()
+cfg.members[0].host = "{{ groups['primary_servers'] }}:27017"
+rs.reconfig(cfg)
+rs.status()
