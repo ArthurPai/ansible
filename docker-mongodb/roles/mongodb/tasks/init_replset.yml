@@ -5,9 +5,6 @@
   sudo: yes
   template: src=replset_init.j2 dest=/tmp/replset_init.js
   
-- name: Start Mongo shell within container
+- name: Start mongo shell and initialize MongoDB replica set
   sudo: yes
   command: docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_{{ mongod_port }}_TCP_ADDR /tmp/replset_init.js'
-
-- name: Initialize MongoDB cluster
-  shell: 
