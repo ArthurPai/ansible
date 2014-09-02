@@ -1,6 +1,10 @@
 ---
 # This Playbook pulls MongoDB image from public Docker repository
 
+- name: Ensure Docker service has started
+  sudo: yes
+  service: name=docker state=started
+
 - name: Pull MongoDB image from public Docker repository
   sudo: yes
   command: sudo docker pull {{ docker_mongodb_image }}
