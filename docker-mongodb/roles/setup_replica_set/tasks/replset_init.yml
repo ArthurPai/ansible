@@ -1,6 +1,0 @@
----
-- name: Create replica set initialization file
-  template: src=replset_init.j2 dest=/tmp/replset_init.js
-  
-- name: Initialize replica set
-  command: mongo --port {{ mongod_port }} /tmp/replset_init.js
