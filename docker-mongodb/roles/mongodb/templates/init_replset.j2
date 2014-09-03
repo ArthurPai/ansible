@@ -1,13 +1,13 @@
 rs.initiate()
 sleep(3000)
+
+{# Add secondaries to MongoDB cluster #}
 {% for host in groups['secondary_servers'] %}
 rs.add("{{ host }}:{{ mongod_port }}")
 sleep(3000)
 {% endfor %}
-rs.status()
+
+{# Reconfig primary hostname (was container default) #}
 cfg = rs.conf()
-{% for host in groups['primary_servers'] %}
-cfg.members[0].host = "{{ host }}:{{ mongod_port }}"
-{% endfor %}
+cfg.members[0].host = "{{ groups['primary_servers'][0] }}:{{ mongod_port }}"
 rs.reconfig(cfg)
-rs.status()
