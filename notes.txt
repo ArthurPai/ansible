@@ -23,6 +23,10 @@ sudo docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongod
 10.208.18.89  phel002b6b211d7 rs3-1
 10.208.19.131 phel0028eac30d9 rs3-2
 
+phel00211df482a rs4-0
+phel0026eb6b0d6 rs4-1
+phel00272f68c1e rs4-2
+
 # mongo shell rsconf()
 rsconf = {
            _id: "rs0",
