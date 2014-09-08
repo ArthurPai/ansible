@@ -11,9 +11,9 @@ sudo docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongod
 # hosts
 10.208.17.87  phel002e126e2a4 ansiblehost
 
-10.208.18.162 phel002c55bfaf8 rs1-0
-10.208.18.77  phel0028368623d rs1-1
-10.208.18.94  phel0021573379f rs1-2
+10.208.18.77  phel0028ace500d rs1-0
+10.208.18.162 phel0026264a1f4 rs1-1
+10.208.18.89  phel002548eae8d rs1-2
 
 10.208.16.16  phel00275c8d736 rs2-0
 10.208.16.219 phel0022fc9a874 rs2-1
