@@ -8,11 +8,19 @@
 - name: Create MongoDB data directory
   sudo: yes
   file: path={{ mongodb_datadir_prefix }}mongodb state=directory mode=1766
+  when: docker_external_volume == true
   
 - name: Create MongoDB log directory
   sudo: yes
   file: path={{ mongodb_logdir_prefix }}mongodb state=directory mode=1766
+  when: docker_external_volume == true
   
-- name: Start MongoDB with configured mongod.conf
+- name: Start MongoDB in Docker container, with external data and log directory
   sudo: yes
   command: docker run --name mongodb -d -v /tmp:/tmp -v {{ mongodb_datadir_prefix }}mongodb:{{ mongodb_datadir_prefix }}mongodb -v {{ mongodb_logdir_prefix }}mongodb:{{ mongodb_logdir_prefix }}mongodb -p {{ mongod_port }}:{{ mongod_port }} {{ docker_mongodb_image }} sh -c "/bin/cp -rf /tmp/mongod.conf.tmp /etc/mongod.conf && mongod -f /etc/mongod.conf"
+  when: docker_external_volume == true
+  
+- name: Start MongoDB in Docker container
+  sudo: yes
+  command: docker run --name mongodb -d -v /tmp:/tmp -v {{ mongodb_datadir_prefix }}mongodb -v {{ mongodb_logdir_prefix }}mongodb -p {{ mongod_port }}:{{ mongod_port }} {{ docker_mongodb_image }} sh -c "/bin/cp -rf /tmp/mongod.conf.tmp /etc/mongod.conf && mongod -f /etc/mongod.conf"
+  when: docker_external_volume == false

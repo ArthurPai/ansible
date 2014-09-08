@@ -2,6 +2,9 @@
 # Docker image for MongoDB
 docker_mongodb_image: dockerfile/mongodb
 
+# Whether to use external volume with container (e.g. /data, /var/log)
+docker_external_volume: false
+
 ############## Global MongoDB variables ##########
 # Port for mongod
 mongod_port: 27017
