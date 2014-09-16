@@ -1,4 +1,0 @@
----
-- hosts: primary_servers
-  tasks:
-    - include: roles/mongodb/tasks/init_replset.yml

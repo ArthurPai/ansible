@@ -9,35 +9,9 @@ sudo docker run -i -t --rm --link mongodb:mongodb dockerfile/mongodb bash -c 'mo
 sudo docker run -i -t --rm --link mongodb:mongodb -v /tmp:/tmp dockerfile/mongodb bash -c 'mongo --host $MONGODB_PORT_27017_TCP_ADDR /tmp/init_replset.js'
 
 # hosts
-10.208.17.87  phel002e126e2a4 ansiblehost
+10.208.56.47  phel00298bdf422 ansiblehost   # Store and run Ansible playbooks
+10.208.84.40  phel002f5f7ecdb dockerhost    # Private Docker repository, host Docker images
 
-10.208.18.77  phel0028ace500d rs1-0
-10.208.18.162 phel0026264a1f4 rs1-1
-10.208.18.89  phel002548eae8d rs1-2
-
-10.208.16.16  phel00275c8d736 rs2-0
-10.208.16.219 phel0022fc9a874 rs2-1
-10.208.18.52  phel0024a93c308 rs2-2
-
-10.208.16.59  phel00208e0f04c rs3-0
-10.208.18.89  phel002b6b211d7 rs3-1
-10.208.19.131 phel0028eac30d9 rs3-2
-
-phel00211df482a rs4-0
-phel0026eb6b0d6 rs4-1
-phel00272f68c1e rs4-2
-
-# mongo shell rsconf()
-rsconf = {
-           _id: "rs0",
-           members: [
-                      {
-                       _id: 0,
-                       host: "688534c811d4:27017"
-                      },
-                      {
-                       _id: 1,
-                       host: "phel0026f40180f:27017"
-                      }
-                    ]
-         }
+10.208.56.71  phel00283293866 rs0-0
+10.208.56.72  phel002d8f5d4bd rs0-1
+10.208.56.73  phel0020e94d6da rs0-2
