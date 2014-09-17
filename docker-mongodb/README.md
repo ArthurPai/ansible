@@ -18,9 +18,12 @@ This Ansible playbook will:
 Done.
 
 
-Recommended servers:
-1 x Ansiblehost
+Recommended setup:
+
+1 x Ansiblehost (minimum resource needed)
+
 1 x MongoDB primary server
+
 N x MongoDB secondary servers (should have at least two, this setup does not support arbiter yet)
 
 Usage (Linux):
@@ -33,10 +36,12 @@ Usage (Linux):
 
 3. Create repo directory
 > mkdir repo
+
 > cd repo
 
 4. Fork this proj to your own git repo, or git pull from parent directory
 > git pull https://github.com/gisgit/ansible.git
+
 > cd ansible/docker-mongodb
 
 5. Edit 'hosts' file and enter hostname or ip for primary and secondary servers
@@ -48,6 +53,7 @@ Usage (Linux):
 7. (optional) Ansible uses ssh to operate on client machines. If haven't done so, create ssh key and build ssh authentication between machines.
 > ssh-keygen
 (password-less rsa key should do)
+
 > ssh-copy-id -i .ssh/id_rsa.pub <username>@<client-hostname>
 (repeat ssh-copy-id for all client machines)
 
@@ -57,5 +63,6 @@ Usage (Linux):
 Done. To verify successful roll out of MongoDB replica set, ssh to a client machine and type
 > mongo
 (enter mongo shell at default port 27017)
+
 > rs.status()
 (print replica set status)
